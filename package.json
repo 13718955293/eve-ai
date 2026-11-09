@@ -1,0 +1,48 @@
+{
+  "name": "magpie-openai-compatible",
+  "version": "0.1.0",
+  "description": "Magpie provider plugin for OpenAI-compatible APIs.",
+  "type": "module",
+  "main": "./index.mjs",
+  "files": [
+    "index.mjs",
+    "README.md",
+    "LICENSE",
+    "test"
+  ],
+  "keywords": [
+    "magpie",
+    "magpie-plugin",
+    "opencode",
+    "opencode-plugin",
+    "openai-compatible",
+    "provider"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/13718955293/magpie-openai-compatible.git"
+  },
+  "bugs": {
+    "url": "https://github.com/13718955293/magpie-openai-compatible/issues"
+  },
+  "homepage": "https://github.com/13718955293/magpie-openai-compatible#readme",
+  "scripts": {
+    "test": "node --test test/plugin.test.mjs",
+    "pack:check": "npm pack --dry-run"
+  },
+  "magpie": {
+    "name": "Magpie OpenAI Compatible",
+    "summary": {
+      "en": "Use any OpenAI-compatible endpoint as a Magpie provider.",
+      "zh": "把 OpenAI 兼容接口接入 Magpie。"
+    },
+    "maxConcurrency": 4,
+    "options": {
+      "baseUrl": "https://api.openai.com/v1",
+      "defaultModel": "gpt-4o-mini",
+      "authHeader": "Authorization",
+      "authPrefix": "Bearer"
+    }
+  }
+}
