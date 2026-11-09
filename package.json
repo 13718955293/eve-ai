@@ -1,5 +1,5 @@
 {
-  "name": "magpie-openai-compatible",
+  "name": "eve-ai",
   "version": "0.1.0",
   "description": "Magpie provider plugin for OpenAI-compatible APIs.",
   "type": "module",
@@ -21,21 +21,21 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/13718955293/magpie-openai-compatible.git"
+    "url": "git+https://github.com/13718955293/eve-ai.git"
   },
   "bugs": {
-    "url": "https://github.com/13718955293/magpie-openai-compatible/issues"
+    "url": "https://github.com/13718955293/eve-ai/issues"
   },
-  "homepage": "https://github.com/13718955293/magpie-openai-compatible#readme",
+  "homepage": "https://github.com/13718955293/eve-ai#readme",
   "scripts": {
     "test": "node --test test/plugin.test.mjs",
     "pack:check": "npm pack --dry-run"
   },
   "magpie": {
-    "name": "Magpie OpenAI Compatible",
+    "name": "Eve AI",
     "summary": {
       "en": "Use any OpenAI-compatible endpoint as a Magpie provider.",
-      "zh": "把 OpenAI 兼容接口接入 Magpie。"
+      "zh": "把 OpenAI 兼容接口接入 Magpie 的 Eve AI 插件。"
     },
     "maxConcurrency": 4,
     "options": {

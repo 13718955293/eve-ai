@@ -7,8 +7,8 @@ test("config declares an OpenAI-compatible provider", async () => { // 作用：
   const hooks = await MagpieOpenAICompatible({}, { baseUrl: "http://127.0.0.1:4010/v1", defaultModel: "demo-model" }); // 作用：使用本地地址和固定模型创建插件实例。
   const config = {}; // 作用：准备 Magpie 会传给 config hook 的空配置。
   await hooks.config(config); // 作用：执行插件的 provider 配置逻辑。
-  assert.equal(config.provider["magpie-openai-compatible"].api, "http://127.0.0.1:4010/v1"); // 作用：确认 provider 使用了规范化后的 API 地址。
-  assert.equal(config.provider["magpie-openai-compatible"].models["demo-model"].tool_call, true); // 作用：确认模型声明支持工具调用。
+  assert.equal(config.provider["eve-ai"].api, "http://127.0.0.1:4010/v1"); // 作用：确认 provider 使用了规范化后的 API 地址。
+  assert.equal(config.provider["eve-ai"].models["demo-model"].tool_call, true); // 作用：确认模型声明支持工具调用。
 }); // 作用：结束 provider 配置测试。
 
 test("loader adds the configured API key header", async () => { // 作用：验证 API Key 会进入每个模型请求的认证头。

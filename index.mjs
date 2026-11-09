@@ -1,5 +1,5 @@
 // 作用：为 Magpie 提供一个可配置的 OpenAI 兼容模型提供方。
-const PROVIDER_ID = "magpie-openai-compatible"; // 作用：使用独立 provider id，避免覆盖 Magpie 内置的 openai 提供方。
+const PROVIDER_ID = "eve-ai"; // 作用：使用短而独立的 provider id，避免覆盖 Magpie 内置的 openai 提供方。
 const DEFAULT_BASE_URL = "https://api.openai.com/v1"; // 作用：没有插件选项时默认连接 OpenAI 官方兼容端点。
 const DEFAULT_MODEL = "gpt-4o-mini"; // 作用：模型列表接口不可用时提供一个可测试的回退模型。
 const DEFAULT_CONTEXT = 128000; // 作用：为未返回能力信息的模型提供保守的上下文长度。
@@ -54,7 +54,7 @@ const fallbackModels = (provider) => provider?.models || {
 export const MagpieOpenAICompatible = async (_input, rawOptions) => {
   const options = rawOptions && typeof rawOptions === "object" ? rawOptions : {};
   const baseURL = normalizeBaseUrl(options.baseUrl || options.baseURL);
-  const providerName = String(options.providerName || "OpenAI Compatible");
+  const providerName = String(options.providerName || "Eve AI");
   const defaultModel = String(options.defaultModel || DEFAULT_MODEL);
   const initialModel = toMagpieModel({ id: defaultModel, name: defaultModel }, options);
   return {
@@ -69,7 +69,7 @@ export const MagpieOpenAICompatible = async (_input, rawOptions) => {
     },
     auth: {
       provider: PROVIDER_ID,
-      methods: [{ type: "api", label: "OpenAI-compatible API key", placeholder: "sk-…" }],
+      methods: [{ type: "api", label: "Eve AI API key", placeholder: "sk-…" }],
       async loader(getAuth) {
         const auth = await getAuth();
         if (auth?.type !== "api" || !auth.key) return {};

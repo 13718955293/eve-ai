@@ -1,4 +1,4 @@
-# magpie-openai-compatible
+# eve-ai
 
 把任意 OpenAI 兼容接口接入 Magpie 的 provider 插件。
 
@@ -7,14 +7,14 @@
 ## 安装
 
 ```sh
-magpie plugin add magpie-openai-compatible
+magpie plugin add eve-ai
 ```
 
 也可以从 GitHub 或本地目录安装：
 
 ```sh
-magpie plugin add github:13718955293/magpie-openai-compatible
-magpie plugin add ./magpie-openai-compatible
+magpie plugin add github:13718955293/eve-ai
+magpie plugin add ./eve-ai
 ```
 
 ## 配置地址
@@ -22,20 +22,20 @@ magpie plugin add ./magpie-openai-compatible
 默认地址是 `https://api.openai.com/v1`。接入其他 OpenAI 兼容服务时，修改插件选项：
 
 ```sh
-magpie plugin options magpie-openai-compatible '{"baseUrl":"https://your-gateway.example/v1","defaultModel":"your-model"}'
+magpie plugin options eve-ai '{"baseUrl":"https://your-gateway.example/v1","defaultModel":"your-model"}'
 ```
 
 如果网关使用 `x-api-key` 而不是 `Authorization: Bearer`：
 
 ```sh
-magpie plugin options magpie-openai-compatible '{"baseUrl":"https://your-gateway.example/v1","authHeader":"x-api-key","authPrefix":""}'
+magpie plugin options eve-ai '{"baseUrl":"https://your-gateway.example/v1","authHeader":"x-api-key","authPrefix":""}'
 ```
 
 ## 登录和测试
 
 ```sh
-magpie plugin login magpie-openai-compatible
-magpie provider test magpie-openai-compatible
+magpie plugin login eve-ai
+magpie provider test eve-ai
 magpie plugin --json
 ```
 
@@ -75,14 +75,14 @@ npm run pack:check
 在 Windows PowerShell 中，可以使用一个临时配置目录，避免影响现有 Magpie：
 
 ```powershell
-$sandbox = Join-Path $env:TEMP "magpie-openai-compatible-test"
+$sandbox = Join-Path $env:TEMP "eve-ai-test"
 $env:HOME = $sandbox
 $env:XDG_CONFIG_HOME = Join-Path $sandbox ".config"
 $env:XDG_CACHE_HOME = Join-Path $sandbox ".cache"
 magpie plugin add .
 magpie plugin --json
-magpie plugin login magpie-openai-compatible
-magpie provider test magpie-openai-compatible
+magpie plugin login eve-ai
+magpie provider test eve-ai
 ```
 
 ## 安全边界
