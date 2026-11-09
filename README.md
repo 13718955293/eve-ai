@@ -7,7 +7,7 @@
 ## 安装
 
 ```sh
-magpie plugin add eve-ai
+magpie plugin add npm:eve-ai
 ```
 
 也可以从 GitHub 或本地目录安装：
